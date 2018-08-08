@@ -1,0 +1,32 @@
+<% if @user%>
+<section class="box white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <figure>
+          <a href="#" class="shape-round transition-short">
+            <img src="http://placehold.it/1000x1000" alt="Team member">
+          </a>
+        </figure>
+      </div>
+      <div class="col-md-7">
+        <h3><a href="#" class="text-dark-blue hover-text-blue"><%= @user.name %></a></h3>
+        <p>
+          <%= t(".email") %> <%= @user.email %>
+        </p>
+        <ul class="inline-list social-links">
+          <li><a href="#" title="facebook" class="dark-blue hover-red hover-text-white transition-short text-white shape-square"><i class="icon-161"></i></a></li>
+          <li><a href="#" title="twitter" class="dark-blue hover-red hover-text-white transition-short text-white shape-square"><i class="icon-157"></i></a></li>
+          <li><a href="#" title="twitter" class="dark-blue hover-red hover-text-white transition-short text-white shape-square"><i class="icon-146"></i></a></li>
+          <li><a href="#" title="twitter" class="dark-blue hover-red hover-text-white transition-short text-white shape-square"><i class="icon-127"></i></a></li>
+        </ul>
+        <hr>
+        <% if current_user? @user %>
+          <%= render partial: "microposts/form", locals: {micropost: @micropost} %>
+        <% end %>
+        <%= render "shared/microposts" %>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>

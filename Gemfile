@@ -22,7 +22,6 @@ gem "rails", "~> 5.2.0"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "sqlite3"
-gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "validates_timeliness", "~> 4.0", ">= 4.0.2"
 gem "will_paginate", "3.1.6"

@@ -1,0 +1,15 @@
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <p>
+    <%= f.text_field :name, class: "demo_input", placeholder: "Name" %>
+  </p>
+  <p>
+    <%= f.email_field :email, class: "demo_mail", placeholder: "Email" %>
+  </p>
+  <p>
+    <%= f.password_field :password, class: "demo_input" %>
+  </p>
+  <p class="col-md-12">
+    <%= f.submit yield(:button_text), class: "button-md dark-blue hover-red to-right" %>
+  </p>
+<% end %>

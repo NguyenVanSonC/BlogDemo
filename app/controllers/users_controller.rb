@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :correct_user?, only: %i(edit update)
   before_action :find_user, except: %i(index new create)
+  before_action :logged_in_user, except: %i(new create)
+  before_action :load_microposts, only: %i(show)
 
   def index
     @users = User.select(:id, :name,
@@ -9,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @microposts = @user.microposts.by_order.paginate page: params[:page]
     return if @user
     flash[:notice] = t "notice"
     render :show
@@ -66,5 +67,11 @@ class UsersController < ApplicationController
     return if @user
     flash[:danger] = t "notfound"
     redirect_to root_url
+  end
+
+  def load_microposts
+    @microposts = @user.microposts.by_order.paginate page: params[:page],
+      per_page: Settings.pagemicropost
+    @micropost = current_user.microposts.build
   end
 end

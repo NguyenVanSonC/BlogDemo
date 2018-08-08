@@ -6,21 +6,14 @@
       <div class="row">
         <div class="col-md-2">
           <figure class="logo">
-            <a href="index.html">
-              <%= image_tag(image_path("logo.png")) %>
-            </a>
+            <%= image_tag(image_path("logo.png")) %>
           </figure>
         </div>
         <div class="col-md-10">
           <nav class="main-nav clearfix">
             <ul class="clean-list to-right">
               <li class="current-menu-item">
-                <a href="index.html">Home</a>
-                <ul>
-                  <li><a href="home-two.html">Home business</a></li>
-                  <li><a href="home-blog.html">Home Blog</a></li>
-                  <li><a href="home-one-page.html">Home one page</a></li>
-                </ul>
+                <%= link_to t(".home"), root_path  %>
               </li>
               <li>
                 <a href="features.html">Features</a>
@@ -28,15 +21,6 @@
                   <li><a href="feature-grid.html">Grid</a></li>
                   <li><a href="feature-typo.html">Typography</a></li>
                   <li><a href="feature-buttons.html">Buttons</a></li>
-                  <li><a href="feature-alerts.html">Alerts</a></li>
-                  <li><a href="feature-form.html">Form</a></li>
-                  <li><a href="feature-icons.html">Icons</a></li>
-                  <li><a href="feature-quote.html">Quote</a></li>
-                  <li><a href="feature-table.html">Table</a></li>
-                  <li><a href="feature-dividers.html">Dividers</a></li>
-                  <li><a href="feature-accordion.html">Accordion</a></li>
-                  <li><a href="feature-pricing.html">Pricing tables</a></li>
-                  <li><a href="error.html">Eror 404 page</a></li>
                 </ul>
               </li>
               <li>
@@ -48,24 +32,20 @@
                 </ul>
               </li>
               <li>
-                <a href="team.html">Team</a>
-                <ul>
-                  <li><a href="team-single.html">Single member</a></li>
-                </ul>
+                <%= link_to t(".users"), users_path %>
               </li>
               <li>
-                <a href="blog.html">Blog</a>
-                <ul>
-                  <li><a href="blog-list.html">Blog List Sidebar</a></li>
-                  <li><a href="blog-two-sidebar.html">Blog Two sidebars</a></li>
-                  <li><a href="blog-list-full.html">Blog List full</a></li>
-                  <li><a href="blog-two-col.html">Blog two col</a></li>
-                  <li><a href="blog-three-col.html">Blog three col</a></li>
-                  <li><a href="single-blog.html">Single Post</a></li>
-                  <li><a href="single-blog-two.html">Single Post Two</a></li>
-                </ul>
+                <% if  logged_in? %>
+                  <%= link_to t(".user"), current_user %>
+                  <ul>
+                    <li><%= link_to t(".edit"), edit_user_path(current_user) %></li>
+                    <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+                  </ul>
+                <% else %>
+                  <%= link_to t(".login"), login_path %>
+                <% end %>
               </li>
-              <li><a href="contacts.html">Contact</a></li>
+              <li><%= link_to t(".help"), help_path %></li>
             </ul>
           </nav>
         </div>
