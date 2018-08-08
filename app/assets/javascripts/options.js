@@ -41,8 +41,6 @@ var teslaThemes = {
     this.menu();
     this.fitvids();
     this.progressBar();
-    this.tubular();
-    this.zoomImage();
     this.portfolioFilter();
     this.scrolld();
     this.scrollEffect();
@@ -165,14 +163,6 @@ var teslaThemes = {
     });
   },
 
-  tubular: function () {
-
-    $('.full-video').tubular({
-      videoId : 'ssutK1Gei4A',
-      start   : 3
-    });
-
-  },
 
   map: function () {
 
@@ -695,10 +685,6 @@ var teslaThemes = {
           } );
       }
     
-  },
-
-  zoomImage: function () {
-    $( '.zoom-image' ).swipebox();
   },
 
   portfolioFilter: function () {

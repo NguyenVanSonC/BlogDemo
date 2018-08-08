@@ -36,12 +36,51 @@ en:
   success: "Successful!"
   info_user: "Create successful!"
   notice: "Not Show"
-  notfound: "Not Found"
+  notfound: "Not Found "
+  logged: "LogIn successful!"
+  message: "Can not login"
+  wrong: "Wrong Login"
+  right: "Login Successful!"
+  not-edit: "Not update!"
   users:
     new:
       title: "Sign Up"
       header: "Sign Up"
       submit: "Submit"
+    show:
+      email: "Email:"
+      delete: "Delete"
+    index:
+      title: "All Users"
+      header: "All Users"
+    edit:
+      title: "Edit Infor"
+      save: "Edit Infor"
+      header: "Edit Account"
   shared:
     error_messages:
       messages: "Contain errors:"
+  sessions:
+    new:
+      title: "Login"
+      header: "LogIn"
+      submit: "Login"
+  layouts:
+    header:
+      home: "Home"
+      help: "Help"
+      user: "Profile"
+      users: "All Users"
+      login: "Login"
+      edit: "Edit User"
+      logout: "Logout"
+  microposts:
+    form:
+      submit: "Submit"
+    micropost:
+      delete: "Delete"
+      edit: "Edit"
+    new:
+      submit: "Submit"
+      header: "New Miropost"
+      title: "New Micropost"
