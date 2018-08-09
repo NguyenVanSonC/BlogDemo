@@ -7,9 +7,9 @@
     </div>
     <div class="col-md-7">
       <header class="blog-head">
-        <h4><a href="single-blog.html"><%= micropost.content %></a></h4>
+        <h4><a href="<%= micropost %>"><%= micropost.content %></a></h4>
         <ul class="inline-list blog-meta">
-          <li>by<%= link_to micropost.user_name,micropost.user, class: "text-red hover-text-dark-red" %></li>
+          <li><%= link_to micropost.user_name,micropost.user, class: "text-red hover-text-dark-red" %></li>
           <li><%= micropost.created_at %></li>
         </ul>
       </header>
@@ -19,9 +19,10 @@
         </p>
         <%= link_to t(".delete"), micropost, method: :delete, remote: true, class: "read-more button-sm dark-blue hover-blue" %>
         <%= link_to t(".edit"), edit_micropost_path(micropost),remote: true, class: "read-more button-sm dark-blue hover-blue" %>
-      </div>
-      <div id="edit-<% micropost.id %>">
+        <%= link_to t(".read"), micropost, class: "read-more button-sm dark-blue hover-blue" %>
       </div>
     </div>
   </article>
+  <div id="edit-<% micropost.id %>">
+  </div>
 </li>

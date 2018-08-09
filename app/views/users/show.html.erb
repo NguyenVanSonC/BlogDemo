@@ -20,6 +20,24 @@
           <li><a href="#" title="twitter" class="dark-blue hover-red hover-text-white transition-short text-white shape-square"><i class="icon-146"></i></a></li>
           <li><a href="#" title="twitter" class="dark-blue hover-red hover-text-white transition-short text-white shape-square"><i class="icon-127"></i></a></li>
         </ul>
+        <ul class="inline-list social-links">
+          <div class="stats">
+            <a href="<%= following_user_path @user %>">
+              <%= t ".following" %>
+              <strong id="following" class="stat">
+                <%= @user.following.count %>
+              </strong>
+            </a>
+            <br>
+            <a href="<%= followers_user_path @user %>">
+              <%= t ".follower" %>
+              <strong id="followers" class="stat">
+                <%= @user.followers.count %>
+              </strong>
+            </a>
+            <%= render partial: "follow_form", locals: {user: @user} if logged_in?%>
+          </div>
+        </ul>
         <hr>
         <% if current_user? @user %>
           <%= render partial: "microposts/form", locals: {micropost: @micropost} %>

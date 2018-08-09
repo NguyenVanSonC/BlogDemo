@@ -1,4 +1,14 @@
+@import 'variable_color.scss';
 #show-micropost {
   margin-left: -400px;
   margin-top: 250px;
+}
+#follow_form {
+  width: 150px;
+  margin-top: 10px;
+  input {
+    background: $blue-light;
+    color: $white-light;
+    border-radius: 10px;
+  }
 }

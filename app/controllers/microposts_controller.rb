@@ -1,7 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
-  before_action :find_micropost, only: %i(edit update)
+  before_action :find_micropost, only: %i(edit update show)
 
   def create
     @micropost = current_user.microposts.build micropost_params
@@ -43,10 +43,16 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def show
+    return if @micropost
+    flash[:danger] = t "notfound"
+    render :show
+  end
+
   private
 
   def micropost_params
-    params.require(:micropost).permit :content, :picture
+    params.require(:micropost).permit :content
   end
 
   def correct_user

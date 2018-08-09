@@ -37,11 +37,13 @@ en:
   info_user: "Create successful!"
   notice: "Not Show"
   notfound: "Not Found "
-  logged: "LogIn successful!"
+  logged: "LogIn Please!"
   message: "Can not login"
   wrong: "Wrong Login"
   right: "Login Successful!"
   not-edit: "Not update!"
+  following: "Following"
+  follower: "Follower"
   users:
     new:
       title: "Sign Up"
@@ -50,6 +52,8 @@ en:
     show:
       email: "Email:"
       delete: "Delete"
+      following: "Following : "
+      follower: "Follower : "
     index:
       title: "All Users"
       header: "All Users"
@@ -57,6 +61,10 @@ en:
       title: "Edit Infor"
       save: "Edit Infor"
       header: "Edit Account"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
   shared:
     error_messages:
       messages: "Contain errors:"
@@ -80,6 +88,7 @@ en:
     micropost:
       delete: "Delete"
       edit: "Edit"
+      read: "Read"
     new:
       submit: "Submit"
       header: "New Miropost"
