@@ -17,8 +17,10 @@
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, est, fugiat labore architecto excepturi perspiciatis praesentium aliquam quibusdam et magnam consectetur adipisicing elit. Deleniti, est.
         </p>
-        <%= link_to t(".delete"), micropost, method: :delete, remote: true, class: "read-more button-sm dark-blue hover-blue" %>
-        <%= link_to t(".edit"), edit_micropost_path(micropost),remote: true, class: "read-more button-sm dark-blue hover-blue" %>
+        <% if logged_in? && current_user?(micropost.user)%>
+          <%= link_to t(".delete"), micropost, method: :delete, remote: true, class: "read-more button-sm dark-blue hover-blue" %>
+          <%= link_to t(".edit"), edit_micropost_path(micropost),remote: true, class: "read-more button-sm dark-blue hover-blue" %>
+        <% end %>
         <%= link_to t(".read"), micropost, class: "read-more button-sm dark-blue hover-blue" %>
       </div>
     </div>

@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "logged"
     redirect_to login_url
   end
+
+  def valid_object? object
+    render "layouts/404" unless object
+  end
 end

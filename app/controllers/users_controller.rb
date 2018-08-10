@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user?, only: %i(edit update)
   before_action :find_user, except: %i(index new create)
-  before_action :logged_in_user, except: %i(new create)
+  before_action :logged_in_user, except: %i(new create index show)
   before_action :load_microposts, only: %i(show)
 
   def index
@@ -84,6 +84,8 @@ class UsersController < ApplicationController
   def load_microposts
     @microposts = @user.microposts.by_order.paginate page: params[:page],
       per_page: Settings.pagemicropost
-    @micropost = current_user.microposts.build
+    if logged_in?
+      @micropost = current_user.microposts.build
+    end
   end
 end

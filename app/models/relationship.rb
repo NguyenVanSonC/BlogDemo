@@ -3,5 +3,5 @@ class Relationship < ApplicationRecord
   belongs_to :followed, class_name: User.name
   validates :follower_id, presence: true
   validates :followed_id, presence: true
-  scope :by_follower_id, -> id{where follower_id: id}
+  scope :by_follower_id, ->id{where follower_id: id}
 end

@@ -9,3 +9,5 @@ maxcontent: 140
 picturesize: 5
 sizeavatar3: 30
 pagemicropost: 10
+maxcomment: 255
+pagecomment: 10

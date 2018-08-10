@@ -1,4 +1,5 @@
 @import 'variable_color.scss';
+
 #show-micropost {
   margin-left: -400px;
   margin-top: 250px;
@@ -10,5 +11,17 @@
     background: $blue-light;
     color: $white-light;
     border-radius: 10px;
+  }
+}
+#comment-cre {
+  color: $blue-light;
+  font-size: small;
+}
+#comment-button {
+  a {
+    background-color: $blue-light;
+    color: $white-light;
+    padding: 10px;
+    margin-left: 5px;
   }
 }

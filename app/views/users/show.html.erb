@@ -39,7 +39,7 @@
           </div>
         </ul>
         <hr>
-        <% if current_user? @user %>
+        <% if logged_in?&&current_user?(@user)  %>
           <%= render partial: "microposts/form", locals: {micropost: @micropost} %>
         <% end %>
         <%= render "shared/microposts" %>

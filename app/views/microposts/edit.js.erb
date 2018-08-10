@@ -1,1 +1,1 @@
-$('#edit-<% @micropost.id %>').html('<%= j render "microposts/form" %>');
+$('#micropost-<%= @micropost.id %>').append('<%= j render "microposts/form" %>');

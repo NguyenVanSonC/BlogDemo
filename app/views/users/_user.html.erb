@@ -1,7 +1,7 @@
 <li class="col-md-4 col-sm-6">
   <figure>
     <a href="team-single.html" class="shape-round hover-move-top transition-short">
-      <img src="http://placehold.it/500x500" alt="Team member">
+      <%= gravatar_for user %>
     </a>
   </figure>
   <h4 class="text-center"><a href="#" class="text-dark-blue hover-text-blue"><%= link_to user.name, user %></a></h4>

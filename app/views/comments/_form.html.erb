@@ -1,0 +1,11 @@
+<%= form_for [@micropost, @comment], remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <p>
+    <%= f.text_area :content, class: "demo_input", placeholder: "Content" %>
+  </p>
+  <%= f.hidden_field :reply_to, value: @reply_to %>
+  <%= f.hidden_field :micropost_id, value: @micropost.id %>
+  <p class="col-md-12">
+    <%= f.submit t(".submit"), class: "button-md dark-blue hover-red to-right" %>
+  </p>
+<% end %>

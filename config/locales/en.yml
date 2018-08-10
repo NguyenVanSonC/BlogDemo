@@ -44,6 +44,9 @@ en:
   not-edit: "Not update!"
   following: "Following"
   follower: "Follower"
+  not_load_comments: "Not Load Comments!"
+  not-add-comment: "Not Create Your Comment!"
+  not-edit-comment: "Can Not Edit Comment!"
   users:
     new:
       title: "Sign Up"
@@ -93,3 +96,17 @@ en:
       submit: "Submit"
       header: "New Miropost"
       title: "New Micropost"
+  comments:
+    comment:
+      say: "  says:"
+      reply: "Reply"
+      edit: "Edit"
+      delete: "Delete"
+    form:
+      header: "Write Comment"
+      submit: "Comment"
+    subcomments:
+      say: "  says:"
+      reply: "Reply"
+      edit: "Edit"
+      delete: "Delete"

@@ -1,6 +1,21 @@
-users = User.all
-user  = users.first
-following = users[2..50]
-followers = users[3..40]
-following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) }
+Comment.create!(
+    content: "I like It! ",
+    micropost_id: 295,
+    user_id: 1
+)
+Comment.create!(
+    content: "This so awesome ",
+    micropost_id: 295,
+    user_id: 2
+)
+Comment.create!(
+    content: "Good Job ",
+    micropost_id: 295,
+    user_id: 3
+)
+Comment.create!(
+    content: "Thank You! ",
+    micropost_id: 295,
+    user_id: 4
+)
+

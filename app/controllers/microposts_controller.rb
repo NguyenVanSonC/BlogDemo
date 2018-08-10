@@ -2,6 +2,7 @@ class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
   before_action :find_micropost, only: %i(edit update show)
+  before_action :load_comments, only: %i(show)
 
   def create
     @micropost = current_user.microposts.build micropost_params
@@ -26,7 +27,6 @@ class MicropostsController < ApplicationController
         format.html{render current_user}
       end
     end
-
   end
 
   def edit; end
@@ -62,5 +62,11 @@ class MicropostsController < ApplicationController
 
   def find_micropost
     @micropost = Micropost.find_by id: params[:id]
+  end
+
+  def load_comments
+    @comments = @micropost.comments.paginate page: params[:page],
+      per_page: Settings.pagecomment
+    @comment = Comment.new
   end
 end
