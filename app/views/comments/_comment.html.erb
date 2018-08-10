@@ -1,0 +1,39 @@
+<% if comment.parent_comment.nil? %>
+<div class="row" id="comment-<%= comment.id %>">
+  <div class="col-md-12">
+    <ul class="clean-list comment-items">
+      <li>
+        <div class="comment-post">
+          <figure>
+            <a href="#">
+              <img src="http://placehold.it/300x300" alt="avatar">
+            </a>
+          </figure>
+          <div class="comment-content">
+            <h5><a href="#"><%= comment.user_name %></a><%= t ".say" %>
+              <div id="comment-button">
+                <% if logged_in? %>
+                  <% if current_user? comment.user %>
+                    <%= link_to t(".delete"), comment, remote: true, method: :delete, class: "text-red to-right" %>
+                    <%= link_to t(".edit"), edit_micropost_comment_path(comment.micropost, comment), remote: true, class: "text-red to-right" %>
+                  <% end %>
+                  <%= link_to t(".reply"), new_comment_path(micropost_id: @micropost.id, comment_id: comment.id), remote: true, class: "text-red to-right" %>
+                <% end %>
+              </div>
+              <br>
+              <span class="text-grey font-small" id="comment-cre"><%= comment.created_at %></span>
+            </h5>
+            <p>
+              <%= comment.content %>
+            </p>
+          </div>
+        </div>
+        <ul class="clean-list">
+          <%= render partial: "comments/subcomments", collection: comment.reply_comments, as: :comment %>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,30 @@
+<li class="col-md-12" id="micropost-<%= micropost.id %>">
+  <article class="blog-item list-slyle row">
+    <div class="col-md-5">
+      <figure>
+        <img src="http://placehold.it/1200x880" alt="My blog post">
+      </figure>
+    </div>
+    <div class="col-md-7">
+      <header class="blog-head">
+        <h4><a href="<%= micropost %>"><%= micropost.content %></a></h4>
+        <ul class="inline-list blog-meta">
+          <li><%= link_to micropost.user_name,micropost.user, class: "text-red hover-text-dark-red" %></li>
+          <li><%= micropost.created_at %></li>
+        </ul>
+      </header>
+      <div class="blog-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, est, fugiat labore architecto excepturi perspiciatis praesentium aliquam quibusdam et magnam consectetur adipisicing elit. Deleniti, est.
+        </p>
+        <% if logged_in? && current_user?(micropost.user)%>
+          <%= link_to t(".delete"), micropost, method: :delete, remote: true, class: "read-more button-sm dark-blue hover-blue" %>
+          <%= link_to t(".edit"), edit_micropost_path(micropost),remote: true, class: "read-more button-sm dark-blue hover-blue" %>
+        <% end %>
+        <%= link_to t(".read"), micropost, class: "read-more button-sm dark-blue hover-blue" %>
+      </div>
+    </div>
+  </article>
+  <div id="edit-<% micropost.id %>">
+  </div>
+</li>

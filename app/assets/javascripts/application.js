@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require activestorage
 //= require bootstrap
 //= require bootstrap.min

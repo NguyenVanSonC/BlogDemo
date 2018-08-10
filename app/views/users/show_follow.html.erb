@@ -1,0 +1,13 @@
+<% provide :title, @title %>
+<% if @users.any? %>
+<section class="box white">
+  <div class="container">
+    <h3 class="fancy-heading center-me"><span><%= @title %></span></h3>
+    <ul class="clean-list team-members row">
+      <%= render @users %>
+    </ul>
+  </div>
+</section>
+<%= will_paginate %>
+<% end %>
+
